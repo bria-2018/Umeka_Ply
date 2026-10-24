@@ -1,0 +1,238 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   UMEKA PLY — DESIGN TOKENS
+   Primary deep green #053733 · Supporting green #415E45
+   Warm off-white #EDEAE6 · Charcoal #242220 · Honey-gold accents (from logo)
+   ========================================================================== */
+@theme {
+  --color-forest: #053733;
+  --color-forest-950: #021f1c;
+  --color-forest-900: #032925;
+  --color-forest-800: #0a443f;
+  --color-forest-700: #12564f;
+  --color-moss: #415e45;
+  --color-moss-200: #c9d3c6;
+  --color-bone: #edeae6;
+  --color-paper: #f7f5f2;
+  --color-sand: #e2dbd1;
+  --color-charcoal: #242220;
+  --color-stone: #57534e;
+  --color-stone-light: #8b8580;
+  --color-honey: #c39b3b;
+  --color-honey-light: #dcbd72;
+  --color-honey-ink: #7a5c18;
+  --color-oak: #d8c29e;
+  --color-walnut: #6b4a2b;
+  --color-danger: #a33a2a;
+  --color-success: #2f6b3f;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --breakpoint-3xl: 1720px;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--color-forest);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--color-honey-light); color: var(--color-forest-950); }
+  :focus-visible {
+    outline: 2px solid var(--color-honey);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  img { max-width: 100%; height: auto; }
+  button { cursor: pointer; }
+  summary { cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+}
+
+/* ---------- Fluid type scale ---------- */
+@utility text-display-2xl {
+  font-size: clamp(3.25rem, 9vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+@utility text-display-xl {
+  font-size: clamp(2.6rem, 6.2vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+@utility text-display-lg {
+  font-size: clamp(2.2rem, 4.6vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+@utility text-display-md {
+  font-size: clamp(1.8rem, 3.2vw, 2.9rem);
+  line-height: 1.1;
+}
+@utility text-display-sm {
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  line-height: 1.18;
+}
+@utility text-lede {
+  font-size: clamp(1.075rem, 1.35vw, 1.3rem);
+  line-height: 1.6;
+}
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ---------- Layout ---------- */
+@utility container-x {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4.5vw, 4.5rem);
+}
+@utility section-y {
+  padding-block: clamp(4.5rem, 9vw, 8.5rem);
+}
+@utility section-y-sm {
+  padding-block: clamp(3.25rem, 6vw, 5.5rem);
+}
+
+/* ---------- Signature motif: laminated layer lines ----------
+   Thin stacked rules that echo a plywood edge. Used as dividers and
+   ornaments throughout the site. */
+@utility ply-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    currentColor 0,
+    currentColor 1px,
+    transparent 1px,
+    transparent 6px
+  );
+}
+
+/* Subtle wood-grain texture for selected surfaces */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .18' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 600px 300px;
+  }
+}
+
+/* ---------- Motion ----------
+   Reveal is progressive: content is visible by default and only hidden for
+   animation once JS has added the `js` class to <html>. Add ?qa to any URL to
+   disable reveal animations (useful for full-page screenshots). */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js .reveal.is-visible,
+.reveal-off .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.page-transition { animation: page-in 0.6s var(--ease-out-expo) both; }
+
+@keyframes layer-slide {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.layer-anim > span {
+  transform-origin: left center;
+  animation: layer-slide 1.2s var(--ease-out-expo) both;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.hero-zoom { animation: hero-zoom 2.4s var(--ease-out-expo) both; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-up { animation: fade-up 1s var(--ease-out-expo) both; animation-delay: var(--d, 0ms); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- Rich text (articles, legal pages) ---------- */
+.prose-umeka { color: var(--color-stone); font-size: 1.075rem; line-height: 1.75; max-width: 72ch; }
+.prose-umeka > * + * { margin-top: 1.25em; }
+.prose-umeka h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin-top: 2em; color: var(--color-forest); }
+.prose-umeka h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin-top: 1.6em; color: var(--color-forest); }
+.prose-umeka ul { list-style: none; padding: 0; }
+.prose-umeka ul li { position: relative; padding-left: 1.5em; }
+.prose-umeka ul li + li { margin-top: 0.5em; }
+.prose-umeka ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 0.7em;
+  height: 1px;
+  background: var(--color-honey);
+}
+.prose-umeka a { color: var(--color-forest); text-decoration: underline; text-underline-offset: 3px; }
+.prose-umeka strong { color: var(--color-charcoal); font-weight: 600; }
+.prose-umeka table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.prose-umeka th, .prose-umeka td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-sand); vertical-align: top; }
+.prose-umeka th { color: var(--color-forest); font-weight: 600; background: var(--color-bone); }
+
+/* Hide scrollbars on horizontal rails while keeping them scrollable */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

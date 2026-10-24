@@ -1,0 +1,27 @@
+{
+  "name": "umeka-ply-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Umeka Ply – Trusted with Pride. Official website (Next.js static export).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "images": "node scripts/optimize-images.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

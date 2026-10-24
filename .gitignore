@@ -1,0 +1,7 @@
+node_modules/
+.next/
+umeka-next/node_modules/
+umeka-next/.next/
+*.log
+.DS_Store
+Thumbs.db
