@@ -3726,3 +3726,472 @@ p { margin: 0; text-wrap: pretty; color: var(--grey); }
 }
 
 /* End of extensions */
+
+/* ==========================================================================
+   ARCHITECTURAL ELEVATION ENHANCEMENTS (Modern, Premium, Balanced)
+   ========================================================================== */
+
+/* 1. Hero Banner Redesign (Unified, Architectural, Left-Aligned) */
+.hero-arch {
+  position: relative;
+  background: #071F19;
+  background-image: 
+    radial-gradient(ellipse at 85% 25%, rgba(31, 75, 60, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 75%, rgba(197, 155, 39, 0.09) 0%, transparent 50%),
+    linear-gradient(135deg, #071F19 0%, #0B251E 100%);
+  color: var(--white);
+  padding-block: clamp(3.25rem, 5.5vw, 5.25rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.hero-arch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .hero-arch-grid {
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(3rem, 5vw, 5.5rem);
+  }
+}
+.hero-arch-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.hero-arch-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+.hero-eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--yellow);
+}
+.hero-arch-title {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+.hero-arch-title .accent-gold {
+  color: var(--yellow);
+  font-style: italic;
+  font-weight: 400;
+}
+.hero-arch-lede {
+  font-family: var(--sans);
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  color: rgba(246, 245, 242, 0.88);
+  line-height: 1.6;
+  max-width: 36rem;
+  margin: 0 0 2rem;
+}
+.hero-arch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.96rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(197, 155, 39, 0.28);
+  transition: all 0.25s ease;
+}
+.hero-btn-primary:hover {
+  background: #d4a933;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(197, 155, 39, 0.38);
+}
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.96rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+.hero-arch-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+.hero-trust-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--yellow);
+  flex-shrink: 0;
+}
+.hero-arch-visual {
+  position: relative;
+  width: 100%;
+}
+.hero-visual-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  aspect-ratio: 4 / 3;
+  background: #0C2820;
+}
+.hero-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-visual-card:hover .hero-visual-img {
+  transform: scale(1.03);
+}
+.hero-visual-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(7, 31, 25, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  z-index: 2;
+}
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+.hero-visual-glass-card {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  left: clamp(1.25rem, 5vw, 6rem);
+  background: rgba(246, 245, 242, 0.94);
+  backdrop-filter: blur(14px);
+  padding: 1.15rem 1.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(31, 58, 49, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+.glass-card-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--yellow-dark);
+  margin-bottom: 0.25rem;
+}
+.hero-visual-glass-card h4 {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  color: var(--green);
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+.hero-visual-glass-card p {
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* 2. Craft & Technology Process Video Balanced Layout */
+@media (min-width: 1024px) {
+  .video-process-grid {
+    align-items: stretch !important;
+  }
+  .video-process-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .video-process-media {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .video-container-card {
+    height: 100% !important;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+  }
+  .video-poster-wrap {
+    flex: 1;
+    min-height: 400px;
+    aspect-ratio: auto !important;
+  }
+  .video-poster-wrap img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.video-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: #071F19;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-family: var(--sans);
+}
+.video-card-meta span:first-child {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+/* 3. Product Finder Workbench (Compact, Organized, Balanced) */
+.finder-workbench {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 36px rgba(31, 58, 49, 0.05);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .finder-workbench {
+    grid-template-columns: 1fr 1.25fr;
+  }
+}
+.finder-selector-col {
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  background: var(--sand);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 900px) {
+  .finder-selector-col {
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+  }
+}
+.finder-col-head {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--grey);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.finder-col-head::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: var(--yellow);
+}
+.finder-selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.finder-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1.2rem;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--green);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.finder-app-btn:hover {
+  border-color: var(--yellow);
+  background: #FFFDF9;
+  transform: translateX(3px);
+}
+.finder-app-btn[aria-pressed="true"] {
+  border-color: var(--yellow);
+  background: #FFFDF5;
+  font-weight: 600;
+  color: var(--green-dark);
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.16);
+}
+.finder-app-btn .btn-arrow {
+  color: var(--yellow);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.finder-app-btn[aria-pressed="true"] .btn-arrow {
+  transform: translateX(4px);
+}
+
+.finder-result-col {
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+}
+.finder-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.finder-result-top {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.finder-result-thumb {
+  width: 110px;
+  height: 85px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.finder-result-info {
+  flex: 1;
+}
+.finder-result-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--yellow-dark);
+  margin-bottom: 0.25rem;
+}
+.finder-result-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  color: var(--green);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+.finder-result-copy {
+  font-size: 0.92rem;
+  color: var(--grey);
+  line-height: 1.6;
+  margin: 0;
+}
+.finder-result-specs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.65rem 0.95rem;
+  background: var(--sand);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+/* 4. Universal Card Image Container with Hover Zoom */
+.card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: var(--sand);
+  border: 1px solid var(--line);
+}
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.card-img-wrap:hover img {
+  transform: scale(1.03);
+}
+.card-img-wrap .card-img-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(11, 37, 30, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+

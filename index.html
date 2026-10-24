@@ -105,45 +105,61 @@
 
   <main id="main">
     <!-- ==========================================================================
-         PAGE HERO BANNER (Split Green / Lifestyle Photography with Floating Card)
+         PAGE HERO BANNER (Left-Aligned, Minimal, High-Impact Architectural Showcase)
          ========================================================================== -->
-    <section class="page-hero" aria-label="Umeka Ply Hero Banner">
-      <div class="page-hero-split">
-        <!-- Left Brand & Editorial Column -->
-        <div class="page-hero-brand-col">
-          <div>
-            <div class="page-hero-top-eyebrow">
-              <span>ENGINEERED IN KUTCH, GUJARAT</span>
+    <section class="hero-arch" aria-label="Umeka Ply Hero Banner">
+      <div class="wrap">
+        <div class="hero-arch-grid">
+          <!-- Left: Minimal, High-Impact Brand Messaging -->
+          <div class="hero-arch-content">
+            <div class="hero-arch-eyebrow">
+              <span class="hero-eyebrow-line"></span>
+              <span>ENGINEERED IN KUTCH, GUJARAT &middot; ARCHITECTURAL SPECIFICATION</span>
             </div>
-            <div class="page-hero-brand-mark">UMEKA PLY</div>
-            <h1 class="page-hero-title">
-              Trusted with <span class="accent-yellow">Pride.</span>
+            
+            <h1 class="hero-arch-title">
+              Trusted with <span class="accent-gold">Pride.</span>
             </h1>
-            <p class="page-hero-lede">
+            
+            <p class="hero-arch-lede">
               Architectural calibrated plywood, block board and flush doors engineered for enduring spaces.
             </p>
-            <div class="page-hero-ctas">
-              <a class="page-hero-btn-primary" href="#products">Explore Products &rarr;</a>
-              <a class="page-hero-btn-secondary" href="#contact">Send an Enquiry</a>
+            
+            <div class="hero-arch-actions">
+              <a class="hero-btn-primary" href="#products">Explore Products &rarr;</a>
+              <a class="hero-btn-secondary" href="#contact">Send an Enquiry</a>
             </div>
-            <div class="hero-slide-badge-row" style="margin-top: 1.25rem;">
-              <span class="badge-outline">Dual-Side Calibrated</span>
-              <span class="badge-outline">Seasoned Hardwood</span>
-              <span class="badge-outline">Zero Core Gaps</span>
+            
+            <div class="hero-arch-trust">
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Dual-Side Calibrated</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Seasoned Hardwood</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Zero Core Gaps</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Right Lifestyle Photography & Floating Card -->
-        <div class="page-hero-img-col" style="background-image: url('assets/images/hero-1.jpg');">
-          <div class="page-hero-floating-card">
-            <div class="card-decor-lines">
-              <span></span>
-              <span></span>
-              <span></span>
+          <!-- Right: Strong Architectural Visual Showcase -->
+          <div class="hero-arch-visual">
+            <div class="hero-visual-card">
+              <img src="assets/images/lifestyle/interior-architecture-with-wood-paneling-and-white-2026-09-24-11-47-48-utc.jpg" alt="Architectural Living Space Crafted with Umeka Calibrated Plywood" class="hero-visual-img" loading="eager">
+              <div class="hero-visual-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Chopadva Facility &middot; Kutch, Gujarat</span>
+              </div>
+              <div class="hero-visual-glass-card">
+                <div class="glass-card-tag">Precision Engineering</div>
+                <h4>Dual-Side Calibrated Panels</h4>
+                <p>Uniform gauge thickness for seamless joinery and lasting architectural stability.</p>
+              </div>
             </div>
-            <h4>Built layer by layer. Backed by experience.</h4>
-            <p>Architectural surfaces engineered for precision joinery.</p>
           </div>
         </div>
       </div>
@@ -511,11 +527,11 @@
             </div>
           </div>
 
-          <!-- Right: Process Video Player -->
+          <!-- Right: Process Video Player (Balanced Height with Left Content) -->
           <div class="video-process-media">
             <div class="video-container-card">
               <div class="video-poster-wrap" id="videoPoster">
-                <img src="assets/images/owner-video-poster.jpg" alt="Umeka Plywood Manufacturing Process — From Forest to Finished Board" loading="lazy">
+                <img src="assets/images/quality-factory.jpg" alt="Umeka Plywood Manufacturing Facility — Hydraulic Press & Wide-Belt Sanding" loading="lazy">
                 <div class="video-overlay-gradient"></div>
                 
                 <button class="video-play-btn" id="playProcessVideo" type="button" aria-label="Play full manufacturing process video">
@@ -525,12 +541,17 @@
 
                 <div class="video-meta-badge">
                   <span class="badge badge-yellow">Factory Tour</span>
-                  <span class="video-duration">Full Process Walkthrough</span>
+                  <span class="video-duration">Kutch Production Facility</span>
                 </div>
               </div>
 
+              <div class="video-card-meta">
+                <span>Chopadva Plant &middot; Kutch, Gujarat</span>
+                <span>Continuous Automated Line</span>
+              </div>
+
               <div class="video-embed-wrap" id="videoEmbedWrap" style="display:none">
-                <iframe id="videoIframe" src="" title="Umeka Plywood Manufacturing Process" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;"></iframe>
+                <iframe id="videoIframe" src="" title="Umeka Plywood Manufacturing Process" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:440px;border:0;"></iframe>
               </div>
             </div>
           </div>
@@ -540,6 +561,7 @@
 
     <!-- ==========================================================================
          PRODUCT FINDER ("Where are you building?")
+         Compact, Organized, Balanced Architectural Workbench
          ========================================================================== -->
     <section class="sec sec-subtle" id="finder" aria-labelledby="finder-title">
       <div class="wrap">
@@ -549,9 +571,14 @@
           <p class="lede">Choose your project and we'll point you to the right product.</p>
         </div>
 
-        <div class="finder-grid" style="margin-top:clamp(2rem, 4vw, 3rem);">
-          <div class="chips" id="chips" role="group" aria-label="Project type"></div>
-          <div class="result" id="result" aria-live="polite"></div>
+        <div class="finder-workbench" style="margin-top:clamp(2rem, 3.5vw, 2.75rem);">
+          <div class="finder-selector-col">
+            <div class="finder-col-head">Select Application</div>
+            <div class="finder-selector-list" id="chips" role="group" aria-label="Project type"></div>
+          </div>
+          <div class="finder-result-col">
+            <div class="result" id="result" aria-live="polite"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1077,12 +1104,11 @@
             </div>
           </div>
 
-          <!-- Right: Architectural Supply Image Placeholder -->
+          <!-- Right: Architectural Supply Visual Showcase -->
           <div class="remarkable-visual">
-            <div class="img-placeholder img-ratio-4-3">
-              <span class="img-placeholder-badge">Direct Supply &middot; Kutch Plant</span>
-              <div class="img-placeholder-size">Recommended: 700 &times; 520 px</div>
-              <p class="img-placeholder-desc">Architectural specification bundles, calibrated panel lots, and container dispatch from Chopadva facility</p>
+            <div class="card-img-wrap" style="aspect-ratio:4/3;margin-bottom:0;box-shadow:0 12px 36px rgba(31,58,49,0.12);">
+              <img src="assets/images/quality-factory.jpg" alt="Architectural specification bundles and container dispatch from Umeka Kutch facility" loading="lazy">
+              <span class="card-img-badge">Chopadva Plant &middot; Kutch</span>
             </div>
           </div>
         </div>
