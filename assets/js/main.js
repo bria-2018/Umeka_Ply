@@ -15,6 +15,25 @@
     yrEl.textContent = new Date().getFullYear();
   }
 
+  // Automatic Active Navigation Link Highlighter across inner pages
+  (function () {
+    var rawPath = window.location.pathname.toLowerCase();
+    var navLinks = $$('.nav a, .drawer nav a');
+    navLinks.forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      var cleanHref = href.toLowerCase().replace(/^\.\.\//, '').replace(/^\.\//, '');
+      var seg = cleanHref.split('/')[0].replace(/\.html$/, '');
+
+      if (seg && seg !== 'index.html' && seg !== '#spaces' && !cleanHref.startsWith('http') && !cleanHref.startsWith('#')) {
+        if (rawPath.indexOf('/' + seg + '/') !== -1 || rawPath.indexOf('/' + seg + '.') !== -1 || rawPath.endsWith('/' + seg)) {
+          a.classList.add('active');
+          a.setAttribute('aria-current', 'page');
+        }
+      }
+    });
+  })();
+
   // Header scroll detection (transitions to brand green at > 20px)
   var hdr = $('#hdr');
   if (hdr) {
